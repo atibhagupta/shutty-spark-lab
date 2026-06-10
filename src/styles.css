@@ -215,6 +215,11 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
+@keyframes shutty-grid-march {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 60px; }
+}
+
 /* ============================= UTILITIES ============================= */
 
 /* Scroll-draw horizontal line (structural border) */
@@ -324,4 +329,28 @@
 }
 .sheen:hover::after {
   transform: translateX(130%) skewX(-20deg);
+}
+
+/* Minimal moving orange grid backdrop */
+@utility orange-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 69, 0, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 69, 0, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: shutty-grid-march 3.4s linear infinite;
+  mask-image: radial-gradient(circle at 50% 40%, #000 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 0%, transparent 75%);
+}
+
+/* Word-by-word text reveal (used by <TextReveal />) */
+.word-reveal {
+  opacity: 0;
+  transform: translateY(110%);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.in-view .word-reveal {
+  opacity: 1;
+  transform: translateY(0);
 }

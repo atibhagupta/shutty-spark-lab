@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
+import { TextReveal } from "./TextReveal";
 
 function CountUp({
   to,
@@ -76,9 +77,12 @@ export function DataWall() {
         <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
           The hard numbers
         </p>
-        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
-          The metrics of brain rot.
-        </h2>
+        <TextReveal
+          as="h2"
+          text="The metrics of brain rot."
+          highlight="rot"
+          className="max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
+        />
         <div className="reveal mt-4 h-px w-full origin-left line-draw bg-white/15" />
 
         <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden md:grid-cols-3">

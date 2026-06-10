@@ -75,3 +75,67 @@ export function useScrollProgress<T extends HTMLElement = HTMLDivElement>() {
 
   return { ref, progress };
 }
+
+/**
+ * Scroll-linked parallax. Returns a ref + a translateY offset (px) that
+ * shifts as the element moves through the viewport. `speed` controls strength
+ * (negative drifts up, positive drifts down).
+ */
+export function useParallax<T extends HTMLElement = HTMLDivElement>(speed = 40) {
+  const ref = useRef<T>(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || 1;
+      // -1 (below) .. 1 (above) centered on viewport middle
+      const rel = (rect.top + rect.height / 2 - vh / 2) / (vh / 2 + rect.height / 2);
+      setOffset(Math.max(-1, Math.min(1, rel)) * speed);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [speed]);
+
+  return { ref, offset };
+}
+
+/** Tracks overall page scroll progress (0..1) for a top progress bar. */
+export function usePageProgress() {
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      setProgress(max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+  return progress;
+}
