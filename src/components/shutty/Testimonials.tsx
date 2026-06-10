@@ -7,19 +7,19 @@ const PEOPLE = [
   {
     avatar: shailly,
     quote:
-      "I was glued to Reels and Instagram, constantly deactivating my account just to focus — which never worked because I love the app too much. SHUTTY flipped it. It feeds my love for showing my work: I stay on Instagram, post my sprint progress to my story, and let a bit of peer pressure keep me locked in.",
+      "I was glued to Reels and Instagram, constantly deactivating my account just to focus  which never worked because I love those apps too much. SHUTTY flipped it. It feeds my love for showing my work: I stay on Instagram, post my sprint progress to my story, and let a bit of peer pressure keep me locked in.",
     label: "Shailly // Georgia // Instagram Maximalist",
   },
   {
     avatar: michael,
     quote:
-      "As a software engineer my biggest leak was texting my girlfriend and friends every random thought mid-code. SHUTTY actually fixed that. Knowing my team can see my live status creates a feedback loop that makes it really hard to wander off.",
+      "As a software engineer my biggest leak was texting my girlfriend and friends every random thought mid-code. I would delete the apps but then reinstall it and realised no matter how hard I tried social media is now a part of our lives we cannot just delete but SHUTTY actually fixed that. Knowing my team can see my live status creates a feedback loop that makes it really hard to wander off.",
     label: "Michael // London // Software Engineer",
   },
   {
     avatar: kevin,
     quote:
-      "I'm grinding through a PhD and I stay off the usual social networks because I value my output. I use SHUTTY purely to gamify my daily work and stay loosely connected to my circle. It's a far better use of a streak than chasing meaningless ones on Snapchat.",
+      "I'm grinding through a PhD in Computer Science and I stay off the usual social networks because I value my output. I use SHUTTY purely to gamify my daily work and stay loosely connected to my circle. It's a far better use of a streak than chasing meaningless ones on Snapchat. I can see what my friends are upto and it keeps me connected to them",
     label: "Kevin // Academic Cohort // PhD Candidate",
   },
 ];

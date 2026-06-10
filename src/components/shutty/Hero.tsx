@@ -46,8 +46,8 @@ export function Hero() {
           >
             SHUTTY is the productivity app for performative workers. Start a focus
             session, put your phone down, and race your tribe to keep your streak alive.
-            Then share your sprint straight to LinkedIn and Instagram. Get more done —
-            and get the credit for it.
+            Then share your sprint straight to LinkedIn and Instagram. Get more done and
+            get your scores in.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
