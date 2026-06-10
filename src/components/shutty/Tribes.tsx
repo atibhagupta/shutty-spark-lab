@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useReveal } from "@/hooks/use-reveal";
+import { useReveal, useParallax } from "@/hooks/use-reveal";
 
 const TRIBES = [
   { id: "warwick", label: "Warwick University", emoji: "🎓", count: 1248, note: "students grinding right now" },
@@ -29,6 +29,8 @@ function buildCards(seed: number): Card[] {
 
 export function Tribes() {
   const ref = useReveal<HTMLDivElement>();
+  const heading = useParallax<HTMLDivElement>(-26);
+  const line = useParallax<HTMLDivElement>(18);
   const [active, setActive] = useState(TRIBES[0]);
   const [tick, setTick] = useState(0);
 
@@ -43,17 +45,23 @@ export function Tribes() {
   return (
     <section id="tribes" className="relative border-t border-white/10 py-24">
       <div ref={ref} className="mx-auto max-w-7xl px-5 sm:px-8">
-        <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
-          Find your people
-        </p>
-        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
-          Your focus crew, live.
-        </h2>
-        <p className="reveal mt-4 max-w-xl text-left text-muted-foreground">
-          Pick a tribe and you&apos;ll see everyone who&apos;s working right now. When friends
-          can see your live status, it&apos;s a lot harder to quietly give up.
-        </p>
-        <div className="reveal mt-6 h-px w-full origin-left line-draw bg-white/15" />
+        <div ref={heading.ref} style={{ transform: `translateY(${heading.offset}px)` }}>
+          <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
+            Find your people
+          </p>
+          <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
+            Your focus crew, live.
+          </h2>
+          <p className="reveal mt-4 max-w-xl text-left text-muted-foreground">
+            Pick a tribe and you&apos;ll see everyone who&apos;s working right now. When friends
+            can see your live status, it&apos;s a lot harder to quietly give up.
+          </p>
+        </div>
+        <div
+          ref={line.ref}
+          style={{ transform: `translateY(${line.offset}px)` }}
+          className="reveal mt-6 h-px w-full origin-left line-draw bg-white/15"
+        />
 
         <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[260px_1fr]">
           {/* left: tribe menu */}

@@ -1,14 +1,16 @@
 import { Linkedin, Instagram, Heart, MessageCircle, Repeat2, Flame } from "lucide-react";
-import { useReveal } from "@/hooks/use-reveal";
+import { useReveal, useParallax } from "@/hooks/use-reveal";
 import shailly from "@/assets/memoji-shailly.png";
 
 export function ShareProgress() {
   const ref = useReveal<HTMLDivElement>();
+  const copy = useParallax<HTMLDivElement>(-22);
+  const cards = useParallax<HTMLDivElement>(30);
   return (
     <section id="share" className="relative overflow-hidden border-t border-white/10 py-24">
       <div ref={ref} className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* copy */}
-        <div>
+        <div ref={copy.ref} style={{ transform: `translateY(${copy.offset}px)` }}>
           <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
             Built for performative workers
           </p>
@@ -52,7 +54,7 @@ export function ShareProgress() {
         </div>
 
         {/* animated share cards */}
-        <div className="relative h-[30rem]">
+        <div ref={cards.ref} style={{ transform: `translateY(${cards.offset}px)` }} className="relative h-[30rem]">
           {/* LinkedIn card */}
           <div
             className="absolute left-0 top-2 w-72 border border-white/12 bg-charcoal p-5 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)] transition-all duration-500 hover:z-20 hover:-translate-y-2 hover:rotate-0 hover:border-orange/50 sm:w-80"
