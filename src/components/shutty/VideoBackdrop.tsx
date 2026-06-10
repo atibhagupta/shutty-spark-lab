@@ -21,8 +21,8 @@ export function VideoBackdrop({
       />
       {overlay && (
         <>
-          <div className="absolute inset-0 bg-black/55" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-transparent to-black/90" />
         </>
       )}
     </div>
