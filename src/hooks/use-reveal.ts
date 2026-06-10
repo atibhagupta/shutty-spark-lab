@@ -10,7 +10,7 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(options?: {
   rootMargin?: string;
 }) {
   const ref = useRef<T>(null);
-  const { threshold = 0.18, once = true, rootMargin = "0px 0px -10% 0px" } = options ?? {};
+  const { threshold = 0.05, once = true, rootMargin = "0px 0px 0px 0px" } = options ?? {};
 
   useEffect(() => {
     const el = ref.current;
