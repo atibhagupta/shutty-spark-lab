@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useReveal } from "@/hooks/use-reveal";
+import { useReveal, useParallax } from "@/hooks/use-reveal";
 import { TextReveal } from "./TextReveal";
 
 function CountUp({
@@ -59,6 +59,8 @@ const STATS = [
 
 export function DataWall() {
   const ref = useReveal<HTMLDivElement>();
+  const heading = useParallax<HTMLDivElement>(-28);
+  const line = useParallax<HTMLDivElement>(20);
   const [active, setActive] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -74,16 +76,22 @@ export function DataWall() {
   return (
     <section className="relative border-t border-white/10 py-24">
       <div ref={ref} className="mx-auto max-w-7xl px-5 sm:px-8">
-        <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
-          The hard numbers
-        </p>
-        <TextReveal
-          as="h2"
-          text="The metrics of brain rot."
-          highlight="rot"
-          className="max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
+        <div ref={heading.ref} style={{ transform: `translateY(${heading.offset}px)` }}>
+          <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
+            The hard numbers
+          </p>
+          <TextReveal
+            as="h2"
+            text="The metrics of brain rot."
+            highlight="rot"
+            className="max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
+          />
+        </div>
+        <div
+          ref={line.ref}
+          style={{ transform: `translateY(${line.offset}px)` }}
+          className="reveal mt-4 h-px w-full origin-left line-draw bg-white/15"
         />
-        <div className="reveal mt-4 h-px w-full origin-left line-draw bg-white/15" />
 
         <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden md:grid-cols-3">
           {STATS.map((s, i) => (
