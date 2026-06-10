@@ -1,10 +1,12 @@
 import { MotionField } from "./MotionField";
 import { PhoneMockup } from "./PhoneMockup";
-import { useReveal, useScrollProgress } from "@/hooks/use-reveal";
+import { useReveal, useScrollProgress, useParallax } from "@/hooks/use-reveal";
 
 export function Hero() {
   const reveal = useReveal<HTMLDivElement>({ threshold: 0.05 });
   const { ref: scrollRef, progress } = useScrollProgress<HTMLElement>();
+  const headingPx = useParallax<HTMLHeadingElement>(-26);
+  const copyPx = useParallax<HTMLParagraphElement>(-14);
 
   return (
     <section id="top" ref={scrollRef} className="relative overflow-hidden pt-28 pb-20 sm:pt-36">
@@ -20,7 +22,11 @@ export function Hero() {
             Focus, but make it multiplayer
           </div>
 
-          <h1 className="text-left text-5xl font-semibold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1
+            ref={headingPx.ref}
+            style={{ transform: `translateY(${headingPx.offset}px)` }}
+            className="text-left text-4xl font-light leading-[1] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+          >
             Your attention
             <br />
             span is cooked.
@@ -29,7 +35,11 @@ export function Hero() {
             <span className="text-shimmer">Shutty.</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-left text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p
+            ref={copyPx.ref}
+            style={{ transform: `translateY(${copyPx.offset}px)` }}
+            className="mt-8 max-w-xl text-left text-base leading-relaxed text-muted-foreground sm:text-lg"
+          >
             SHUTTY is the productivity app for performative workers. Start a focus
             session, put your phone down, and race your tribe to keep your streak alive.
             Then share your sprint straight to LinkedIn and Instagram. Get more done —
