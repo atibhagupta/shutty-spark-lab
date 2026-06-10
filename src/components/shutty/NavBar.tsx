@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { usePageProgress } from "@/hooks/use-reveal";
 
 export function NavBar() {
   const [scrolled, setScrolled] = useState(false);
+  const progress = usePageProgress();
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -44,6 +46,13 @@ export function NavBar() {
           </a>
         </div>
       </nav>
+      {/* scroll progress line */}
+      <div className="absolute inset-x-0 bottom-0 h-px bg-white/5">
+        <div
+          className="h-full origin-left bg-orange shadow-[0_0_10px_var(--orange-glow)]"
+          style={{ transform: `scaleX(${progress})`, transition: "transform 0.1s linear" }}
+        />
+      </div>
     </header>
   );
 }
