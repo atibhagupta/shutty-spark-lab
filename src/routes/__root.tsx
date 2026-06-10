@@ -93,6 +93,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "SHUTTY — Turn focus into a multiplayer sport" },
+      { name: "description", content: "Shutty transforms deep work into a competitive, social multiplayer game for enhanced focus and accountability." },
+      { property: "og:description", content: "Shutty transforms deep work into a competitive, social multiplayer game for enhanced focus and accountability." },
+      { name: "twitter:description", content: "Shutty transforms deep work into a competitive, social multiplayer game for enhanced focus and accountability." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8304b5f0-e0e0-4f20-8060-65a13d9e0ccf/id-preview-c00456bb--1b2c24dd-103a-4365-a454-22693563247d.lovable.app-1781102038078.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8304b5f0-e0e0-4f20-8060-65a13d9e0ccf/id-preview-c00456bb--1b2c24dd-103a-4365-a454-22693563247d.lovable.app-1781102038078.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
