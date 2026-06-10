@@ -30,10 +30,10 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-xl text-left text-base leading-relaxed text-muted-foreground sm:text-lg">
-            SHUTTY turns deep focus into a game you play with friends. Start a session,
-            put your phone down, and race to keep your streak alive. Your tribe can see
-            when you&apos;re locked in — and when you bail. It&apos;s simple: show up, focus,
-            beat yesterday.
+            SHUTTY is the productivity app for performative workers. Start a focus
+            session, put your phone down, and race your tribe to keep your streak alive.
+            Then share your sprint straight to LinkedIn and Instagram. Get more done —
+            and get the credit for it.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
