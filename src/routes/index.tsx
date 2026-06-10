@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { NavBar } from "@/components/shutty/NavBar";
 import { Hero } from "@/components/shutty/Hero";
+import { HowItWorks } from "@/components/shutty/HowItWorks";
 import { DataWall } from "@/components/shutty/DataWall";
 import { Tribes } from "@/components/shutty/Tribes";
+import { ShareProgress } from "@/components/shutty/ShareProgress";
 import { Testimonials } from "@/components/shutty/Testimonials";
 import { Footer } from "@/components/shutty/Footer";
 
@@ -32,8 +34,10 @@ function Index() {
       <NavBar />
       <main>
         <Hero />
+        <HowItWorks />
         <DataWall />
         <Tribes />
+        <ShareProgress />
         <Testimonials />
         <Footer />
       </main>
