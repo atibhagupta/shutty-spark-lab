@@ -42,7 +42,7 @@ export function NavBar() {
             href="#claim"
             className="border border-white/20 px-4 py-2 font-mono text-xs uppercase tracking-widest text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-orange hover:text-orange hover:shadow-[0_0_20px_-4px_var(--orange-glow)]"
           >
-            Deploy App
+            COMING SOON
           </a>
         </div>
       </nav>
