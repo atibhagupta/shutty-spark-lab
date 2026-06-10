@@ -20,12 +20,29 @@ export function NavBar() {
           <span className="text-lg font-extrabold tracking-tight text-foreground">SHUTTY</span>
           <span className="h-2 w-2 rounded-full bg-orange shadow-[0_0_10px_var(--orange-glow)] animate-blink" />
         </a>
-        <a
-          href="#claim"
-          className="border border-white/20 px-4 py-2 font-mono text-xs uppercase tracking-widest text-foreground transition-colors duration-200 hover:border-orange hover:text-orange"
-        >
-          Deploy App
-        </a>
+        <div className="flex items-center gap-6">
+          <div className="hidden items-center gap-6 font-mono text-xs uppercase tracking-widest text-muted-foreground md:flex">
+            {[
+              { href: "#how", label: "How it works" },
+              { href: "#tribes", label: "Tribes" },
+              { href: "#share", label: "Share" },
+            ].map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="relative transition-colors duration-200 hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-orange after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+          <a
+            href="#claim"
+            className="border border-white/20 px-4 py-2 font-mono text-xs uppercase tracking-widest text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-orange hover:text-orange hover:shadow-[0_0_20px_-4px_var(--orange-glow)]"
+          >
+            Deploy App
+          </a>
+        </div>
       </nav>
     </header>
   );
