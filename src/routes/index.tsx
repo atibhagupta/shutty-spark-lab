@@ -1,29 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NavBar } from "@/components/shutty/NavBar";
+import { Hero } from "@/components/shutty/Hero";
+import { DataWall } from "@/components/shutty/DataWall";
+import { Tribes } from "@/components/shutty/Tribes";
+import { Testimonials } from "@/components/shutty/Testimonials";
+import { Footer } from "@/components/shutty/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "SHUTTY — Turn focus into a multiplayer sport" },
+      {
+        name: "description",
+        content:
+          "SHUTTY turns deep focus into a social game. Start a session, build your streak, and stay locked in with your tribe. Stop doomscrolling, build something.",
+      },
+      { property: "og:title", content: "SHUTTY — Turn focus into a multiplayer sport" },
+      {
+        property: "og:description",
+        content:
+          "Join the focus race. Track live sessions, build streaks, and keep your tribe locked in.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <NavBar />
+      <main>
+        <Hero />
+        <DataWall />
+        <Tribes />
+        <Testimonials />
+        <Footer />
+      </main>
     </div>
   );
 }
