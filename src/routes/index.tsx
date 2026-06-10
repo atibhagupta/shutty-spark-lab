@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { NavBar } from "@/components/shutty/NavBar";
 import { Hero } from "@/components/shutty/Hero";
+import { Marquee } from "@/components/shutty/Marquee";
 import { HowItWorks } from "@/components/shutty/HowItWorks";
 import { DataWall } from "@/components/shutty/DataWall";
 import { Tribes } from "@/components/shutty/Tribes";
@@ -34,6 +35,7 @@ function Index() {
       <NavBar />
       <main>
         <Hero />
+        <Marquee />
         <HowItWorks />
         <DataWall />
         <Tribes />
