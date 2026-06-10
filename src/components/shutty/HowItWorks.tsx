@@ -27,6 +27,8 @@ const STEPS = [
 export function HowItWorks() {
   const ref = useReveal<HTMLDivElement>();
   const grid = useParallax<HTMLDivElement>(60);
+  const heading = useParallax<HTMLDivElement>(-30);
+  const line = useParallax<HTMLDivElement>(22);
   const { ref: secRef, progress } = useScrollProgress<HTMLElement>();
   return (
     <section
@@ -45,20 +47,26 @@ export function HowItWorks() {
         />
       </div>
       <div ref={ref} className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
-          What is SHUTTY?
-        </p>
-        <TextReveal
-          as="h2"
-          text="A focus app that turns deep work into a game you win in public."
-          highlight="public"
-          className="max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
-        />
+        <div ref={heading.ref} style={{ transform: `translateY(${heading.offset}px)` }}>
+          <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
+            What is SHUTTY?
+          </p>
+          <TextReveal
+            as="h2"
+            text="A focus app that turns deep work into a game you win in public."
+            highlight="public"
+            className="max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
+          />
+        </div>
         <p className="reveal mt-4 max-w-xl text-left text-muted-foreground">
           No timers you ignore. No streaks no one sees. SHUTTY makes focus social:
           you lock in, your friends watch, and you post the proof. Here&apos;s how it works.
         </p>
-        <div className="reveal mt-6 h-px w-full origin-left line-draw bg-white/15" />
+        <div
+          ref={line.ref}
+          style={{ transform: `translateY(${line.offset}px)` }}
+          className="reveal mt-6 h-px w-full origin-left line-draw bg-white/15"
+        />
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {STEPS.map((s, i) => {
