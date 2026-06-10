@@ -32,7 +32,7 @@ export function Testimonials() {
         <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
           Real people, real focus
         </p>
-        <h2 className="reveal max-w-3xl text-left text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
+        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
           Verified humans, locked in.
         </h2>
         <div className="reveal mt-4 h-px w-full origin-left line-draw bg-white/15" />
@@ -41,10 +41,10 @@ export function Testimonials() {
           {PEOPLE.map((p, i) => (
             <div
               key={i}
-              className="reveal group relative border-l-2 border-l-transparent bg-black p-8 transition-colors duration-300 hover:border-l-orange hover:bg-[#0A0A0A] md:p-10"
+              className="reveal sheen group relative border-l-2 border-l-transparent bg-black p-8 transition-colors duration-300 hover:border-l-orange hover:bg-[#0A0A0A] md:p-10"
               style={{ transitionDelay: `${i * 90}ms` }}
             >
-              <div className="mb-6 h-16 w-16 overflow-hidden rounded-full border border-white/15 bg-charcoal transition-colors duration-300 group-hover:border-orange/50">
+              <div className="mb-6 h-16 w-16 overflow-hidden rounded-full border border-white/15 bg-charcoal transition-all duration-300 group-hover:scale-110 group-hover:border-orange/50">
                 <img
                   src={p.avatar}
                   alt={`${p.label.split(" // ")[0]} avatar`}

@@ -46,7 +46,7 @@ export function Tribes() {
         <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
           Find your people
         </p>
-        <h2 className="reveal max-w-3xl text-left text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
+        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
           Your focus crew, live.
         </h2>
         <p className="reveal mt-4 max-w-xl text-left text-muted-foreground">
@@ -100,7 +100,7 @@ export function Tribes() {
               <div className="font-mono text-xs uppercase tracking-[0.25em] text-orange">
                 Now grinding
               </div>
-              <div className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
+              <div className="mt-2 text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
                 {active.label} {active.emoji}{" "}
                 <span className="text-glow-orange">
                   {active.count.toLocaleString()}

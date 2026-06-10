@@ -17,7 +17,7 @@ export function NavBar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#top" className="group flex items-center gap-2">
-          <span className="text-lg font-extrabold tracking-tight text-foreground">SHUTTY</span>
+          <span className="text-lg font-semibold tracking-tight text-foreground">SHUTTY</span>
           <span className="h-2 w-2 rounded-full bg-orange shadow-[0_0_10px_var(--orange-glow)] animate-blink" />
         </a>
         <div className="flex items-center gap-6">

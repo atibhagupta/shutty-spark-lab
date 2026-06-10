@@ -33,7 +33,7 @@ export function HowItWorks() {
         <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
           What is SHUTTY?
         </p>
-        <h2 className="reveal max-w-3xl text-left text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
+        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
           A focus app that turns deep work into a game you win in public.
         </h2>
         <p className="reveal mt-4 max-w-xl text-left text-muted-foreground">
@@ -48,16 +48,16 @@ export function HowItWorks() {
             return (
               <div
                 key={s.no}
-                className="reveal group relative overflow-hidden border border-white/12 bg-black/70 p-8 transition-all duration-300 hover:-translate-y-1.5 hover:border-orange/60 hover:shadow-[0_20px_50px_-20px_var(--orange-glow)]"
+                className="reveal sheen card-lift group relative overflow-hidden border border-white/12 bg-black/70 p-8 hover:border-orange/60"
                 style={{ transitionDelay: `${i * 90}ms` }}
               >
-                <div className="absolute right-5 top-5 font-mono text-5xl font-bold text-white/5 transition-colors duration-300 group-hover:text-orange/15">
+                <div className="absolute right-5 top-5 font-mono text-5xl font-bold text-white/5 transition-all duration-300 group-hover:scale-110 group-hover:text-orange/20">
                   {s.no}
                 </div>
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-orange/40 text-orange transition-all duration-300 group-hover:scale-110 group-hover:bg-orange group-hover:text-primary-foreground group-hover:shadow-[0_0_24px_var(--orange-glow)]">
+                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-orange/40 text-orange transition-all duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-orange group-hover:text-primary-foreground group-hover:shadow-[0_0_24px_var(--orange-glow)]">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-2xl font-extrabold tracking-tight text-foreground">{s.title}</h3>
+                <h3 className="text-2xl font-semibold tracking-tight text-foreground">{s.title}</h3>
                 <p className="mt-3 text-left text-sm leading-relaxed text-muted-foreground">
                   {s.body}
                 </p>

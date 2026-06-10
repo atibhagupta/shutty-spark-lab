@@ -12,7 +12,7 @@ export function ShareProgress() {
           <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
             Built for performative workers
           </p>
-          <h2 className="reveal max-w-xl text-left text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
+          <h2 className="reveal max-w-xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
             You were going to post anyway.
             <br />
             <span className="text-glow-orange">Post the proof.</span>
@@ -107,7 +107,7 @@ export function ShareProgress() {
 
               <div className="mt-10 text-center">
                 <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-orange">stayed shutty</div>
-                <div className="mt-2 font-mono text-5xl font-extrabold text-foreground">90<span className="text-orange">m</span></div>
+                <div className="mt-2 font-mono text-5xl font-semibold text-foreground">90<span className="text-orange">m</span></div>
                 <div className="mt-1 font-mono text-[10px] text-muted-foreground">rank #4 of 1,248</div>
               </div>
 

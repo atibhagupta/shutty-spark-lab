@@ -20,13 +20,13 @@ export function Hero() {
             Focus, but make it multiplayer
           </div>
 
-          <h1 className="text-left text-5xl font-extrabold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="text-left text-5xl font-semibold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             Your attention
             <br />
             span is cooked.
             <br />
             <span className="text-muted-foreground">Tell your phone to stay </span>
-            <span className="text-glow-orange">Shutty.</span>
+            <span className="text-shimmer">Shutty.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-left text-base leading-relaxed text-muted-foreground sm:text-lg">

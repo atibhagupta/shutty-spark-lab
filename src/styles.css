@@ -199,6 +199,22 @@
   50% { opacity: 0.25; }
 }
 
+@keyframes shutty-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes shutty-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+@keyframes shutty-pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 /* ============================= UTILITIES ============================= */
 
 /* Scroll-draw horizontal line (structural border) */
@@ -254,4 +270,58 @@
 
 .animate-blink {
   animation: shutty-blink 1.4s steps(1) infinite;
+}
+
+/* Animated gradient text shimmer */
+@utility text-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--orange) 20%,
+    #ffb38a 40%,
+    var(--orange) 60%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shutty-shimmer 3.5s linear infinite;
+}
+
+.animate-bob {
+  animation: shutty-bob 5s ease-in-out infinite;
+}
+
+/* Tilt + glow lift used on interactive cards */
+@utility card-lift {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    border-color 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 30px 60px -25px var(--orange-glow);
+}
+
+/* Sheen sweep that crosses an element on hover */
+@utility sheen {
+  position: relative;
+  overflow: hidden;
+}
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-130%) skewX(-20deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.sheen:hover::after {
+  transform: translateX(130%) skewX(-20deg);
 }
