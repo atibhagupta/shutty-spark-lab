@@ -1,11 +1,12 @@
-import { MotionField } from "./MotionField";
 import { useReveal } from "@/hooks/use-reveal";
+import { VideoBackdrop } from "./VideoBackdrop";
+import focusVideo from "@/assets/motion-focus.mp4.asset.json";
 
 export function Footer() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <footer className="relative overflow-hidden border-t border-white/10 py-28">
-      <MotionField className="opacity-50" />
+      <VideoBackdrop src={focusVideo.url} />
       <div ref={ref} className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <h2 className="reveal max-w-3xl text-left text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-6xl">
           Stop doomscrolling.
