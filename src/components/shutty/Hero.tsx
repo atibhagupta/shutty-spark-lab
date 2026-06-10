@@ -4,7 +4,7 @@ import { useReveal, useScrollProgress } from "@/hooks/use-reveal";
 
 export function Hero() {
   const reveal = useReveal<HTMLDivElement>({ threshold: 0.05 });
-  const { ref: scrollRef, progress } = useScrollProgress<HTMLDivElement>();
+  const { ref: scrollRef, progress } = useScrollProgress<HTMLElement>();
 
   return (
     <section id="top" ref={scrollRef} className="relative overflow-hidden pt-28 pb-20 sm:pt-36">
