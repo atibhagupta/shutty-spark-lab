@@ -1,7 +1,7 @@
 import { Lock, Trophy, Share2 } from "lucide-react";
-import { useReveal } from "@/hooks/use-reveal";
-import { VideoBackdrop } from "./VideoBackdrop";
-import flowVideo from "@/assets/motion-flow.mp4.asset.json";
+import { useReveal, useParallax, useScrollProgress } from "@/hooks/use-reveal";
+import { OrangeGrid } from "./OrangeGrid";
+import { TextReveal } from "./TextReveal";
 
 const STEPS = [
   {
@@ -26,16 +26,34 @@ const STEPS = [
 
 export function HowItWorks() {
   const ref = useReveal<HTMLDivElement>();
+  const grid = useParallax<HTMLDivElement>(60);
+  const { ref: secRef, progress } = useScrollProgress<HTMLElement>();
   return (
-    <section id="how" className="relative overflow-hidden border-t border-white/10 py-24">
-      <VideoBackdrop src={flowVideo.url} />
+    <section
+      id="how"
+      ref={secRef}
+      className="relative overflow-hidden border-t border-white/10 py-24"
+    >
+      <div ref={grid.ref} style={{ transform: `translateY(${grid.offset}px)` }} className="absolute inset-0">
+        <OrangeGrid />
+      </div>
+      {/* vertical section progress feedback */}
+      <div className="absolute left-0 top-0 h-full w-px bg-white/5">
+        <div
+          className="w-full origin-top bg-orange shadow-[0_0_10px_var(--orange-glow)]"
+          style={{ height: `${progress * 100}%`, transition: "height 0.1s linear" }}
+        />
+      </div>
       <div ref={ref} className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
           What is SHUTTY?
         </p>
-        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
-          A focus app that turns deep work into a game you win in public.
-        </h2>
+        <TextReveal
+          as="h2"
+          text="A focus app that turns deep work into a game you win in public."
+          highlight="public"
+          className="max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
+        />
         <p className="reveal mt-4 max-w-xl text-left text-muted-foreground">
           No timers you ignore. No streaks no one sees. SHUTTY makes focus social:
           you lock in, your friends watch, and you post the proof. Here&apos;s how it works.
