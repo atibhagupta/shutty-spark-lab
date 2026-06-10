@@ -17,22 +17,26 @@ export function Hero() {
       >
         {/* left: copy */}
         <div className="reveal">
-          <div className="mb-6 inline-flex items-center gap-2 border border-white/15 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-orange animate-blink" />
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-orange animate-blink shadow-[0_0_8px_var(--orange-glow)]" />
             Focus, but make it multiplayer
           </div>
 
           <h1
             ref={headingPx.ref}
             style={{ transform: `translateY(${headingPx.offset}px)` }}
-            className="text-left text-4xl font-light leading-[1] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            className="flex flex-col gap-1 text-left"
           >
-            Your attention
-            <br />
-            span is cooked.
-            <br />
-            <span className="text-muted-foreground">Tell your phone to stay </span>
-            <span className="text-shimmer">Shutty.</span>
+            <span className="text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">
+              Your attention span is cooked.
+            </span>
+            <span className="mt-1 text-[28px] font-normal leading-tight tracking-[-0.01em] text-muted-foreground sm:text-4xl lg:text-5xl">
+              Tell your phone to stay{" "}
+              <span className="relative font-extrabold tracking-[-0.02em] text-orange">
+                Shutty.
+                <span aria-hidden className="absolute inset-0 -z-10 rounded-full bg-orange/10 blur-xl" />
+              </span>
+            </span>
           </h1>
 
           <p
