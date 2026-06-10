@@ -41,10 +41,10 @@ export function Testimonials() {
           {PEOPLE.map((p, i) => (
             <div
               key={i}
-              className="reveal group relative border-l-2 border-l-transparent bg-black p-8 transition-colors duration-300 hover:border-l-orange hover:bg-[#0A0A0A] md:p-10"
+              className="reveal sheen group relative border-l-2 border-l-transparent bg-black p-8 transition-colors duration-300 hover:border-l-orange hover:bg-[#0A0A0A] md:p-10"
               style={{ transitionDelay: `${i * 90}ms` }}
             >
-              <div className="mb-6 h-16 w-16 overflow-hidden rounded-full border border-white/15 bg-charcoal transition-colors duration-300 group-hover:border-orange/50">
+              <div className="mb-6 h-16 w-16 overflow-hidden rounded-full border border-white/15 bg-charcoal transition-all duration-300 group-hover:scale-110 group-hover:border-orange/50">
                 <img
                   src={p.avatar}
                   alt={`${p.label.split(" // ")[0]} avatar`}

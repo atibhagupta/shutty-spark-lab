@@ -85,7 +85,7 @@ export function DataWall() {
           {STATS.map((s, i) => (
             <div
               key={i}
-              className="reveal group relative bg-black p-8 transition-colors duration-300 hover:bg-charcoal md:p-10"
+              className="reveal sheen group relative bg-black p-8 transition-colors duration-300 hover:bg-charcoal md:p-10"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="absolute inset-0 border-white/10 [border-right-width:1px] last:border-r-0 md:[border-bottom-width:0]" />
