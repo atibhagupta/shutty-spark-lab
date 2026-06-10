@@ -76,7 +76,7 @@ export function DataWall() {
         <p className="reveal mb-3 font-mono text-xs uppercase tracking-[0.3em] text-orange">
           The hard numbers
         </p>
-        <h2 className="reveal max-w-3xl text-left text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
+        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
           The metrics of brain rot.
         </h2>
         <div className="reveal mt-4 h-px w-full origin-left line-draw bg-white/15" />

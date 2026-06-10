@@ -20,7 +20,7 @@ export function Hero() {
             Focus, but make it multiplayer
           </div>
 
-          <h1 className="text-left text-5xl font-extrabold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="text-left text-5xl font-semibold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
             Your attention
             <br />
             span is cooked.

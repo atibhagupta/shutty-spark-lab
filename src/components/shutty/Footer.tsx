@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="relative overflow-hidden border-t border-white/10 py-28">
       <VideoBackdrop src={focusVideo.url} />
       <div ref={ref} className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <h2 className="reveal max-w-3xl text-left text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-6xl">
+        <h2 className="reveal max-w-3xl text-left text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl">
           Stop doomscrolling.
           <br />
           <span className="text-glow-orange">Build something.</span>
@@ -31,7 +31,7 @@ export function Footer() {
 
         <div className="reveal mt-12 h-px w-full origin-left line-draw bg-white/15" />
         <div className="mt-6 flex items-center gap-2">
-          <span className="text-sm font-extrabold tracking-tight text-foreground">SHUTTY</span>
+          <span className="text-sm font-semibold tracking-tight text-foreground">SHUTTY</span>
           <span className="h-1.5 w-1.5 rounded-full bg-orange animate-blink" />
         </div>
       </div>
