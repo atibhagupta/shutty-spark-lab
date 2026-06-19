@@ -85,7 +85,7 @@ export function MeetTheTeam() {
 
                 {/* Floating shutty dot badge */}
                 <div
-                  className="absolute -right-2 -top-2 grid h-8 w-8 place-items-center rounded-full border border-orange/50 bg-black text-[10px] font-bold text-orange shadow-[0_0_16px_-2px_var(--orange-glow)]"
+                  className="absolute -right-2 -top-2 grid h-8 w-8 place-items-center rounded-full border border-orange/50 bg-card text-[10px] font-bold text-orange shadow-[0_0_16px_-2px_var(--orange-glow)]"
                   style={{ animation: "shutty-breathe 2.6s ease-in-out infinite" }}
                 >
                   s
