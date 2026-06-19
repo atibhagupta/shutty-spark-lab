@@ -8,6 +8,7 @@ import { Tribes } from "@/components/shutty/Tribes";
 import { ShareProgress } from "@/components/shutty/ShareProgress";
 import { Testimonials } from "@/components/shutty/Testimonials";
 import { MeetTheTeam } from "@/components/shutty/MeetTheTeam";
+import { Waitlist } from "@/components/shutty/Waitlist";
 import { Footer } from "@/components/shutty/Footer";
 
 export const Route = createFileRoute("/")({
@@ -43,6 +44,7 @@ function Index() {
         <ShareProgress />
         <Testimonials />
         <MeetTheTeam />
+        <Waitlist />
         <Footer />
       </main>
     </div>
