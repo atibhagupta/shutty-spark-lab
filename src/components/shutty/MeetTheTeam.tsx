@@ -53,7 +53,7 @@ export function MeetTheTeam() {
           {TEAM.map((m, i) => (
             <article
               key={m.name}
-              className="reveal group relative overflow-hidden rounded-sm border border-white/10 bg-card p-5 transition-all duration-500 hover:border-orange/40 hover:bg-secondary"
+              className="reveal group relative z-0 overflow-hidden rounded-2xl border border-white/10 bg-card p-5 transition-all duration-500 hover:z-20 hover:-translate-y-2 hover:scale-[1.05] hover:border-orange/40 hover:bg-secondary hover:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.6)]"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Subtle sheen sweep */}
@@ -62,7 +62,7 @@ export function MeetTheTeam() {
               {/* Photo frame with Shutty accents */}
               <div className="relative mx-auto mb-5 w-fit">
                 <div
-                  className="relative aspect-square w-36 overflow-hidden rounded-sm border border-white/15 grayscale transition-all duration-500 group-hover:border-orange/60 group-hover:grayscale-0 group-hover:shadow-[0_0_32px_-6px_var(--orange-glow)]"
+                  className="relative aspect-square w-36 overflow-hidden rounded-3xl border border-white/15 grayscale transition-all duration-500 group-hover:border-orange/60 group-hover:grayscale-0 group-hover:shadow-[0_0_32px_-6px_var(--orange-glow)]"
                   style={{ animation: "shutty-bob 5s ease-in-out infinite" }}
                 >
                   <img
@@ -83,12 +83,15 @@ export function MeetTheTeam() {
                   <div className="absolute bottom-0 left-0 h-8 w-8 border-r border-t border-orange/40 bg-card/60 backdrop-blur-sm" />
                 </div>
 
-                {/* Floating shutty dot badge */}
-                <div
-                  className="absolute -right-2 -top-2 grid h-8 w-8 place-items-center rounded-full border border-orange/50 bg-card text-[10px] font-bold text-orange shadow-[0_0_16px_-2px_var(--orange-glow)]"
-                  style={{ animation: "shutty-breathe 2.6s ease-in-out infinite" }}
-                >
-                  s
+                {/* Floating REC button */}
+                <div className="absolute -right-2 -top-2 flex items-center gap-1 rounded-full border border-red-500/50 bg-card px-2 py-1 shadow-[0_0_16px_-2px_rgba(239,68,68,0.6)]">
+                  <span className="relative grid h-3 w-3 place-items-center">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500/70" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-500" />
+                  </span>
+                  <span className="font-mono text-[9px] font-bold uppercase tracking-wider text-red-500">
+                    Rec
+                  </span>
                 </div>
               </div>
 
