@@ -52,8 +52,7 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              id="claim"
-              href="#"
+              href="#claim"
               className="group relative border border-orange bg-black px-7 py-4 font-mono text-sm uppercase tracking-widest text-orange transition-all duration-300 hover:bg-orange hover:text-primary-foreground hover:shadow-[0_0_30px_-4px_var(--orange-glow)]"
             >
               Claim Your Streak
