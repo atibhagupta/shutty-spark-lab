@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Flame, Gift, Sparkles, Loader2, Check } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -32,23 +31,30 @@ export function Waitlist() {
     }
 
     setLoading(true);
-    const { error } = await supabase
-      .from("waitlist")
-      .insert({ name: trimmedName, email: trimmedEmail });
-    setLoading(false);
+    try {
+      const res = await fetch("/api/public/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: trimmedName, email: trimmedEmail }),
+      });
+      const data = await res.json().catch(() => ({}));
 
-    if (error) {
-      if (error.code === "23505") {
-        setJoined(true);
-        toast.success("You're already on the list — see you at launch!");
+      if (!res.ok) {
+        toast.error(data?.error || "Something broke. Try again in a sec.");
         return;
       }
-      toast.error("Something broke. Try again in a sec.");
-      return;
-    }
 
-    setJoined(true);
-    toast.success("You're in! We'll email you the moment SHUTTY drops.");
+      setJoined(true);
+      toast.success(
+        data?.alreadyJoined
+          ? "You're already on the list — see you at launch!"
+          : "You're in! Check your inbox for your confirmation.",
+      );
+    } catch {
+      toast.error("Network hiccup. Try again in a sec.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
