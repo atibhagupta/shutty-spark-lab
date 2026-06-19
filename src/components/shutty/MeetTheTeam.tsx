@@ -53,7 +53,7 @@ export function MeetTheTeam() {
           {TEAM.map((m, i) => (
             <article
               key={m.name}
-              className="reveal group relative overflow-hidden rounded-sm border border-white/10 bg-card p-5 transition-all duration-500 hover:border-orange/40 hover:bg-[#080808]"
+              className="reveal group relative overflow-hidden rounded-sm border border-white/10 bg-card p-5 transition-all duration-500 hover:border-orange/40 hover:bg-secondary"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Subtle sheen sweep */}
