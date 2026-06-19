@@ -80,7 +80,7 @@ export function MeetTheTeam() {
                     }}
                   />
                   {/* Corner grid accent */}
-                  <div className="absolute bottom-0 left-0 h-8 w-8 border-r border-t border-orange/40 bg-black/60 backdrop-blur-sm" />
+                  <div className="absolute bottom-0 left-0 h-8 w-8 border-r border-t border-orange/40 bg-card/60 backdrop-blur-sm" />
                 </div>
 
                 {/* Floating shutty dot badge */}
