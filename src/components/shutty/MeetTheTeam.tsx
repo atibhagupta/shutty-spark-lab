@@ -30,7 +30,7 @@ const TEAM = [
     role: "Finance Advisor & Director",
     alias: "aka the finance bro",
     location: "Delhi, India",
-    bio: "A qualified CFA candidate and published equity researcher, Shubham's insights regularly feature in leading financial magazines. He commands deep market knowledge and handles all of Shutty's strategic financial planning mostly because the CEO and CTO are entirely unqualified to touch the spreadsheets.",
+    bio: "A qualified CFA and published equity researcher, Shubham's insights regularly feature in leading financial magazines. He commands deep market knowledge and handles all of Shutty's strategic financial planning.",
     habit:
       "Insisting on carrying a canvas tote bag and wearing tangled, wired earphones absolutely everywhere including on his recorded Strava runs.",
   },
