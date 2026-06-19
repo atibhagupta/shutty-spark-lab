@@ -6,7 +6,7 @@ import shubham from "@/assets/team-shubham.jpeg.asset.json";
 const TEAM = [
   {
     photo: atibha.url,
-    name: "Atibha",
+    name: "Atibha Gupta",
     role: "Founder",
     alias: "aka mother of shutty",
     location: "London, UK",
