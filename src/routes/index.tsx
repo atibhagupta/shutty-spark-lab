@@ -7,7 +7,6 @@ import { DataWall } from "@/components/shutty/DataWall";
 import { Tribes } from "@/components/shutty/Tribes";
 import { ShareProgress } from "@/components/shutty/ShareProgress";
 import { Testimonials } from "@/components/shutty/Testimonials";
-import { MeetTheTeam } from "@/components/shutty/MeetTheTeam";
 import { Waitlist } from "@/components/shutty/Waitlist";
 import { Footer } from "@/components/shutty/Footer";
 
@@ -26,6 +25,8 @@ export const Route = createFileRoute("/")({
         content:
           "Join the focus race. Track live sessions, build streaks, and keep your tribe locked in.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -43,7 +44,6 @@ function Index() {
         <Tribes />
         <ShareProgress />
         <Testimonials />
-        <MeetTheTeam />
         <Waitlist />
         <Footer />
       </main>

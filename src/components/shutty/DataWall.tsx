@@ -50,8 +50,8 @@ const STATS = [
     body: "is roughly how long the average person holds attention before drifting. For context, a goldfish manages about 9.0s. We can do better.",
   },
   {
-    to: 0,
-    decimals: 2,
+    to: 99,
+    decimals: 0,
     suffix: "%",
     body: "chance you're reading this for any reason other than dodging something you should actually be doing right now. We get it. SHUTTY fixes it.",
   },
