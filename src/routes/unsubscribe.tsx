@@ -3,6 +3,16 @@ import { useEffect, useState } from "react";
 import { Loader2, Check, AlertTriangle } from "lucide-react";
 
 export const Route = createFileRoute("/unsubscribe")({
+  head: () => ({
+    meta: [
+      { title: "Email preferences — SHUTTY" },
+      { name: "description", content: "Manage your SHUTTY email subscription and launch updates." },
+      { property: "og:title", content: "Email preferences — SHUTTY" },
+      { property: "og:description", content: "Manage your SHUTTY email subscription and launch updates." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: UnsubscribePage,
 });
 
