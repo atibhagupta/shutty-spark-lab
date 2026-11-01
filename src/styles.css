@@ -1,0 +1,500 @@
+@import "tailwindcss";
+
+@theme {
+  /* Product palette, exposed as Tailwind colors (bg-paper, text-ink, border-line …). */
+  --color-paper: #ffffff;
+  --color-ink: #002b25;
+  --color-muted-ink: #5c7570;
+  --color-line: #e0e6e4;
+  --color-panel: #f4f7f6;
+  --color-lime: #d7ee82;
+  --color-lime-ink: #002b25;
+  --color-emerald: #00594C;
+  --color-orange: #FF5E00;
+  --color-deep: #001a16;
+  --color-deep-2: #00120f;
+  --color-deep-muted: #7a9993;
+  --color-deep-text: #b3c9c5;
+  --color-deep-line: #1a4039;
+  --color-deep-tick: #2d5952;
+  --color-cream: #ffffff;
+  --color-grain: #ffffff;
+  --color-danger: #e63946;
+  --color-danger-soft: #f4e2dc;
+
+  --font-sans:
+    "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============ SHUTTY tokens ============
+   Warm paper, one ink, a restrained citron. The focus room is the only dark
+   room in the product. */
+:root {
+  --paper: #ffffff;
+  --ink: #002b25;
+  --muted: #5c7570;
+  --line: #e0e6e4;
+  --panel: #f4f7f6;
+  --lime: #d7ee82;
+  --lime-ink: #002b25;
+  --emerald: #00594C;
+  --orange: #FF5E00;
+  --deep: #001a16;
+  --deep-2: #00120f;
+  --cream: #ffffff;
+  --grain: #ffffff;
+  --danger: #e63946;
+  --deep-muted: #7a9993;
+  --deep-text: #b3c9c5;
+  --deep-line: #1a4039;
+  --deep-tick: #2d5952;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+  html,
+  body,
+  #root {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  body {
+    overflow-x: clip;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100dvh;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    font: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .deep :focus-visible {
+    outline-color: var(--lime);
+  }
+  ::selection {
+    background: var(--lime);
+    color: var(--lime-ink);
+  }
+  .lucide {
+    stroke-width: 1.6;
+  }
+}
+
+/* ============ Typography ============ */
+@utility tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings:
+    "tnum" 1,
+    "lnum" 1;
+}
+/* Small caps labels in monospace: the product's "system voice". */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@utility text-display {
+  font-family: var(--font-sans);
+  font-size: clamp(38px, 5.2vw, 68px);
+  line-height: 1.0;
+  font-weight: 500;
+  letter-spacing: -0.052em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+@utility text-title {
+  font-family: var(--font-sans);
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.037em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+@utility text-lede {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+@utility text-numeral {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--ink);
+}
+@utility serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* ============ Surfaces ============ */
+@utility panel {
+  background: var(--panel);
+  border-radius: 9px;
+}
+@utility hairline-top {
+  border-top: 1px solid var(--line);
+}
+@utility hairline-bottom {
+  border-bottom: 1px solid var(--line);
+}
+/* The focus room. Scope for the deep green screen. */
+@utility deep {
+  background: var(--deep);
+  color: var(--cream);
+}
+@utility wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+/* ============ Controls ============ */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 53px;
+  padding: 0.875rem 1.25rem;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  background: var(--emerald);
+  transition:
+    transform 0.3s var(--ease-out),
+    background 0.2s ease,
+    opacity 0.2s ease;
+  &:hover {
+    background: #00473d;
+  }
+  &:active {
+    transform: scale(0.985);
+  }
+}
+@utility btn-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 53px;
+  padding: 0.875rem 1.25rem;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: var(--lime-ink);
+  background: var(--lime);
+  transition:
+    transform 0.3s var(--ease-out),
+    filter 0.2s ease;
+  &:hover {
+    filter: brightness(1.03);
+  }
+  &:active {
+    transform: scale(0.985);
+  }
+}
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.125rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  transition:
+    transform 0.3s var(--ease-out),
+    background 0.2s ease;
+  &:hover {
+    background: var(--panel);
+  }
+  &:active {
+    transform: scale(0.985);
+  }
+}
+@utility icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: transparent;
+  flex-shrink: 0;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.2s var(--ease-out);
+  &:hover {
+    background: var(--panel);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+/* Choice chip: transparent until chosen, then citron. */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 36px;
+  padding: 0 0.875rem;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  background: transparent;
+  &[data-on="true"] {
+    background: var(--lime);
+    color: var(--lime-ink);
+    border-color: transparent;
+    font-weight: 700;
+  }
+}
+/* Underlined text field: the only input treatment. */
+@utility field {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: 0.625rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  outline: none;
+  transition: border-color 0.2s ease;
+  &::placeholder {
+    color: var(--muted);
+    opacity: 0.75;
+  }
+  &:focus {
+    border-bottom-width: 2px;
+    padding-bottom: calc(0.625rem - 1px);
+  }
+}
+
+/* ============ Receipt ============ */
+@utility receipt {
+  position: relative;
+  background: var(--grain);
+  padding: 22px 22px 34px;
+  box-shadow:
+    0 1px 0 rgba(36, 41, 31, 0.04),
+    0 18px 40px -28px rgba(36, 41, 31, 0.45);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 9px),
+    97.5% 100%,
+    95% calc(100% - 9px),
+    92.5% 100%,
+    90% calc(100% - 9px),
+    87.5% 100%,
+    85% calc(100% - 9px),
+    82.5% 100%,
+    80% calc(100% - 9px),
+    77.5% 100%,
+    75% calc(100% - 9px),
+    72.5% 100%,
+    70% calc(100% - 9px),
+    67.5% 100%,
+    65% calc(100% - 9px),
+    62.5% 100%,
+    60% calc(100% - 9px),
+    57.5% 100%,
+    55% calc(100% - 9px),
+    52.5% 100%,
+    50% calc(100% - 9px),
+    47.5% 100%,
+    45% calc(100% - 9px),
+    42.5% 100%,
+    40% calc(100% - 9px),
+    37.5% 100%,
+    35% calc(100% - 9px),
+    32.5% 100%,
+    30% calc(100% - 9px),
+    27.5% 100%,
+    25% calc(100% - 9px),
+    22.5% 100%,
+    20% calc(100% - 9px),
+    17.5% 100%,
+    15% calc(100% - 9px),
+    12.5% 100%,
+    10% calc(100% - 9px),
+    7.5% 100%,
+    5% calc(100% - 9px),
+    2.5% 100%,
+    0 calc(100% - 9px)
+  );
+}
+@utility receipt-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--line);
+}
+@utility receipt-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 12px 0;
+  border-top: 1px dashed var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  & strong {
+    color: var(--ink);
+    font-weight: 500;
+    text-align: right;
+  }
+}
+@utility stamp {
+  display: inline-block;
+  padding: 7px 12px;
+  background: var(--lime);
+  color: var(--lime-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transform: rotate(-5deg);
+  transform-origin: left center;
+}
+
+/* ============ Ruler ============ */
+@utility ruler {
+  position: relative;
+  height: 14px;
+  background-image: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 11px);
+  background-position-x: center;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    width: 2px;
+    height: 18px;
+    margin-left: -1px;
+    background: var(--ink);
+  }
+}
+
+/* ============ Grain ============ */
+@utility grain-overlay {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+}
+
+/* ============ Marquee ============
+   Two identical copies side by side; translating by exactly one copy's
+   width (-50% of the track) and looping is seamless by construction. */
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Aura ring clip: the ring fills more of its box on narrow screens. */
+.aura-video { scale: 1.4; }
+@media (min-width: 640px) { .aura-video { scale: 1; } }
