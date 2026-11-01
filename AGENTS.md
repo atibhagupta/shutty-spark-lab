@@ -1,2 +1,0 @@
-# Architecture rules
-- Keep landing-page feature explanations in the existing HowItWorks component with ordered steps and separate advanced-feature details; this preserves the single-page navigation and shared scroll animations.
