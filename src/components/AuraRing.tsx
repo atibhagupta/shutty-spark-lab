@@ -45,10 +45,10 @@ export function AuraRing() {
         loop
         playsInline
         preload="metadata"
-        poster="/video/aura-poster.jpg"
+        poster="video/aura-poster.jpg"
         aria-hidden
       >
-        <source src="/video/aura.mp4" type="video/mp4" />
+        <source src="video/aura.mp4" type="video/mp4" />
       </video>
 
       {/* Centre: you, focusing */}

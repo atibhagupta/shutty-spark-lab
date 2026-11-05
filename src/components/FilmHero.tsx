@@ -91,11 +91,11 @@ export function FilmHero({ onJoin }: { onJoin: () => void }) {
             playsInline
             autoPlay={!reduced}
             preload="auto"
-            poster="/video/hero-film-landscape-poster.jpg"
+            poster="video/hero-film-landscape-poster.jpg"
             aria-hidden
           >
-            <source src="/video/hero-film-portrait.mp4" type="video/mp4" media="(orientation: portrait)" />
-            <source src="/video/hero-film-landscape.mp4" type="video/mp4" />
+            <source src="video/hero-film-portrait.mp4" type="video/mp4" media="(orientation: portrait)" />
+            <source src="video/hero-film-landscape.mp4" type="video/mp4" />
           </motion.video>
 
           {/* Caption while the brain is still stone */}

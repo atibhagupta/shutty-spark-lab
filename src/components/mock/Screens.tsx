@@ -232,7 +232,7 @@ export function ReceiptScreen({
 /* Flex card: the 9:16 share card with the user's photo behind it      */
 /* ------------------------------------------------------------------ */
 export function FlexCard({
-  photo = "/img/alps.jpg",
+  photo = "img/alps.jpg",
   minutes = 92,
   tag = "Design",
   day = 41,

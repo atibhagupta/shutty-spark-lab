@@ -131,10 +131,10 @@ function ReceiptFilm({ reduced, inView = false }: { reduced: boolean; inView?: b
         loop
         playsInline
         preload="metadata"
-        poster="/video/receipts-poster.jpg"
+        poster="video/receipts-poster.jpg"
         aria-label="A phone printing focus receipts that pile up on a stack"
       >
-        <source src="/video/receipts.mp4" type="video/mp4" />
+        <source src="video/receipts.mp4" type="video/mp4" />
       </motion.video>
     </div>
   );
