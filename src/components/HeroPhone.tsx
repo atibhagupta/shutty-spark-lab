@@ -48,10 +48,10 @@ export function HeroPhone({ width = 272 }: { width?: number }) {
               muted
               playsInline
               preload="auto"
-              poster="/video/hero-app-poster.jpg"
+              poster="video/hero-app-poster.jpg"
               style={{ background: "var(--deep)" }}
             >
-              <source src="/video/hero-app.mp4" type="video/mp4" />
+              <source src="video/hero-app.mp4" type="video/mp4" />
             </video>
           }
         />

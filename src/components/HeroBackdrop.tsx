@@ -22,9 +22,9 @@ export function HeroBackdrop() {
         muted
         playsInline
         preload="auto"
-        poster="/video/hero-ambient-poster.jpg"
+        poster="video/hero-ambient-poster.jpg"
       >
-        <source src="/video/hero-ambient.mp4" type="video/mp4" />
+        <source src="video/hero-ambient.mp4" type="video/mp4" />
       </video>
       {/* Paper wash: keeps contrast for the ink headline, fades to solid at the floor. */}
       <div

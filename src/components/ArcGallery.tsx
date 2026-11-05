@@ -188,10 +188,10 @@ function StoryFilm({ reduced }: { reduced: boolean }) {
       loop
       playsInline
       preload="metadata"
-      poster="/video/story-poster.jpg"
+      poster="video/story-poster.jpg"
       aria-label="Tapping your story opens the Shutty share card over a photo of a laptop in a café"
     >
-      <source src="/video/story.mp4" type="video/mp4" />
+      <source src="video/story.mp4" type="video/mp4" />
     </video>
   );
 }
@@ -320,7 +320,7 @@ function TileShell({ bg, color, children }: { bg: string; color: string; childre
 function FlexTile() {
   return (
     <TileShell bg="#151e18" color="var(--cream)">
-      <img src="/img/alps.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} />
+      <img src="img/alps.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" draggable={false} />
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(180deg, rgba(21,30,24,0.25), rgba(21,30,24,0.1) 45%, rgba(21,30,24,0.85))" }}
